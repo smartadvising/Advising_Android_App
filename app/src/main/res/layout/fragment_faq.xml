@@ -7,10 +7,9 @@
     tools:context=".FAQFrag"
     android:id="@+id/frameLayout">
 
-    <!-- TODO: ADD Button Listeners to the 3 selections -->
-    <!-- TODO: Change APP Theme from FSU TO GENERIC -->
-    <!-- TODO: FIGURE OUT HOW TO MOVE APP DATA FROM LOGIN TO PROFILE PAGE -->
-
+    <!-- TODO: FIGURE OUT HOW TO MAKE POST REQUESTS ABOUT STUDENT'S INFO -->
+    <!-- TODO: FIGURE OUT HOW TO MAKE AND CONNECT THE QUEUE FOR STUDENTS -->
+    <!-- TODO: MAKE AND CONNECT THE FAQ PAGE -->
     <TextView
         android:id="@+id/FAQ_Title"
         android:layout_width="wrap_content"
