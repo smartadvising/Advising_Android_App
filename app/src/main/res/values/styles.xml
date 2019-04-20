@@ -10,13 +10,18 @@
 
     <style name="AlertDialog" parent="Base.Theme.AppCompat.Light.Dialog">
         <item name="android:textColor">@color/Black</item>
-        <item name="android:textColorPrimary">#D3D3D3</item>
-        <item name="android:background">@color/Gold</item>
+        <item name="android:textColorPrimary">@color/Black</item>
+        <item name="android:background">@color/colorPrimary</item>
     </style>
     
     <style name="PopUpTheme" parent="Theme.AppCompat.Light.NoActionBar" >
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowCloseOnTouchOutside">true</item>
     </style>
+
+
+    <string-array name="Major_Array">
+        <item>Please Select Your School First</item>
+    </string-array>
 
 </resources>

@@ -24,11 +24,11 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/popup_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="24dp"
         android:text="User:"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,19 +50,9 @@
         android:id="@+id/pop_up_logout_btn"
         android:layout_width="98dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="36dp"
         android:layout_marginBottom="44dp"
-        android:text="Log Out"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/popup_exit_btn" />
-
-    <Button
-        android:id="@+id/popup_exit_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="44dp"
-        android:text="EXIT"
+        android:text="@string/signout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -70,60 +60,50 @@
         android:id="@+id/popup_closewindow_btn"
         android:layout_width="109dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="44dp"
         android:text="Close Window"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/pop_up_logout_btn" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/popup_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="24dp"
         android:text="Email:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_username" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/popup_school"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="24dp"
         android:text="School: "
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_email" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/popup_major"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="24dp"
         android:text="Major:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_school" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/popup_advising_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="24dp"
         android:text="Advising Level:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="8dp"
-        android:text="Advisor: "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/popup_major" />
 
 </android.support.constraint.ConstraintLayout>

@@ -5,7 +5,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_signIn">Sign In</string>
+    <string name="signout">Sign Out</string>
     <string name="waiting_Room">Waiting Room</string>
     <string name="FAQ">FAQ</string>
     <string name="Profile">Your Profile</string>
+    <string name="Prompt">Select your prompt</string>
 </resources>

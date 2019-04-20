@@ -28,13 +28,10 @@
         <activity android:name="com.microsoft.identity.client.BrowserTabActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="auth"
-                    android:scheme="msal61f56c6a-42c3-4018-812e-7beb3165cd9b" />
+                <data android:host="auth"
+                    android:scheme="msal14fa51c3-b0ea-46c1-8a0b-42f9b1866ccc"/>
             </intent-filter>
         </activity>
 <activity android:name=".ProfilePopup"

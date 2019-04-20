@@ -10,13 +10,16 @@ import com.microsoft.identity.client.AuthenticationCallback;
 import com.microsoft.identity.client.AuthenticationResult;
 import com.microsoft.identity.client.PublicClientApplication;
 import com.microsoft.identity.client.exception.MsalException;
+
 public class AuthenticationController {
     private final String TAG = AuthenticationController.class.getSimpleName();
     private static AuthenticationController INSTANCE;
     private static PublicClientApplication mApplication;
     private AuthenticationResult mAuthResult;
     private static Context context;
+
     private MSALAuthenticationCallback mActivityCallback;
+
     private AuthenticationController(){
     }
 

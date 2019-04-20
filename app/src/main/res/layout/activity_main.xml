@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/crop"
+    android:background="@drawable/blurry_background"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:id="@+id/panel_signin"
@@ -22,19 +24,55 @@
                 android:id="@+id/Login_Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="0dp"
                 android:width="100dp"
                 android:height="75dp"
                 android:text="@string/app_name"
                 android:textAlignment="center"
                 android:textSize="50sp" />
 
+            <Spinner
+                android:id="@+id/school_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="25dp"
+                android:background="#80FFFFFF"
+                android:textAlignment="center" />
+
+            <Spinner
+                android:id="@+id/major_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="#80FFFFFF"
+                android:entries="@array/Major_Array"
+                android:textAlignment="center" />
+
+            <Spinner
+                android:id="@+id/level_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="#80FFFFFF"
+                android:textAlignment="center"
+                />
+
             <Button
                 android:id="@+id/btn_signin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="0dp"
+                android:clickable="false"
                 android:text="@string/title_signIn" />
+
+            <ImageButton
+                android:id="@+id/Main_Exit_Btn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="275dp"
+                android:layout_marginTop="125dp"
+                android:background="@null"
+                app:srcCompat="@drawable/exit_icon" />
 
         </LinearLayout>
 
