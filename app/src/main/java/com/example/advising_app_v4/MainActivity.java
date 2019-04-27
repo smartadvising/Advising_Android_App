@@ -14,14 +14,26 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
+import com.android.volley.*;
+import com.android.volley.toolbox.StringRequest;
 import com.microsoft.identity.client.AuthenticationResult;
 import com.microsoft.identity.client.exception.MsalException;
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.POST;
 
 
 public class MainActivity extends AppCompatActivity implements MSALAuthenticationCallback {
     private final static String TAG = MainActivity.class.getSimpleName();
+
 
     private LinearLayout panel_signin;
     private LinearLayout panelEvents;
@@ -60,7 +72,6 @@ public class MainActivity extends AppCompatActivity implements MSALAuthenticatio
         setPanelVisibility(true,false);
         spinner2 = findViewById(R.id.major_spinner);
 
-
         // -- THis whole ass section is for the first spinner.
         final ArrayList<String> list1 = new ArrayList<String>();
         final fetchData asynchTask = (fetchData) new fetchData(new fetchData.AsyncResponse() {
@@ -76,6 +87,8 @@ public class MainActivity extends AppCompatActivity implements MSALAuthenticatio
         final ArrayList<String> list2 = new ArrayList<String>();
 
 
+
+
         String temp2 = "Select your School";
         list1.add(temp2);
         spinner1 = findViewById(R.id.school_spinner);
@@ -86,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements MSALAuthenticatio
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 String temp = adapterView.getItemAtPosition(i).toString();
                 if(i == 2)
-                { //FIX LATER BY COPYING THE TASK STUFF BELOW OR DOING SOMETHING IDK, HOPE WE DONT EXPAND THIS TO MORE SCHOOLS
+                {
                     ClearPopUpInfo();
                     list2.clear();
                     list2.add("No majors here, Pick Another School!");
@@ -235,10 +248,16 @@ public class MainActivity extends AppCompatActivity implements MSALAuthenticatio
         String [] temp = ProfilePopup.user_email.split("@");
         ProfilePopup.username = temp[0];
         Toast.makeText(MainActivity.this,"Welcome! ",Toast.LENGTH_SHORT ).show();
-        //setPanelVisibility(false,true);
 
 
+/*
+        final postData asynchTask = (postData) new postData(new postData.AsyncResponse() {
+            @Override
+            public void processFinish(ArrayList<String> output) {
 
+            }
+        }).execute();
+        */
 
 
 
@@ -276,4 +295,6 @@ public class MainActivity extends AppCompatActivity implements MSALAuthenticatio
         ProfilePopup.user_major = "";
         ProfilePopup.user_major = "";
     }
+
+
 }

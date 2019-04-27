@@ -100,10 +100,5 @@ public class ProfilePopup extends Activity {
         advisingleveltextview = findViewById(R.id.popup_advising_level);
         advisingleveltextview.setText("Advising Level: ");
         advisingleveltextview.append(user_advising_level);
-
-       // advisortextview= findViewById(R.id.popup_advisor);
-       // advisortextview.setText("Advisor: ");
-       // advisortextview.append(user_advisor);
-
     }
 }

@@ -31,7 +31,7 @@ public class fetchData2 extends AsyncTask<Integer,Void,ArrayList<String>> {
     public fetchData2(AsyncResponse delegate){
         this.delegate = delegate;
     }
-
+//Deals with getting the list of majors from whatever college the user choose
     @Override
     protected ArrayList<String> doInBackground(Integer... CollegeNum) {
             int position = CollegeNum[0].intValue();

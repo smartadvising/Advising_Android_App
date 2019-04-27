@@ -37,6 +37,7 @@
 <activity android:name=".ProfilePopup"
         android:theme="@style/PopUpTheme">
 </activity>
+
     </application>
 
 </manifest>

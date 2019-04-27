@@ -1,5 +1,5 @@
 package com.example.advising_app_v4;
-//Deals with fetching the list of colleges
+//Deals with getting the the faq information from the backend.
 import android.os.AsyncTask;
 
 import com.android.volley.toolbox.Volley;
@@ -15,12 +15,12 @@ import java.io.InputStreamReader;
 import java.net.*;
 import java.util.ArrayList;
 
-public class fetchData extends AsyncTask<Void,Void,ArrayList<String>> {
+public class fetchData4 extends AsyncTask<Void,Void,ArrayList<String>> {
     String Data = "";
     String SingleParsed = "";
     String DataParsed = "";
 
-    public static ArrayList<String> CollegeList = new ArrayList<>();
+    public static ArrayList<String> QueueList = new ArrayList<>();
 
     public interface AsyncResponse {
         void processFinish(ArrayList<String> output);
@@ -28,7 +28,7 @@ public class fetchData extends AsyncTask<Void,Void,ArrayList<String>> {
 
     public AsyncResponse delegate = null;
 
-    public fetchData(AsyncResponse delegate){
+    public fetchData4(AsyncResponse delegate){
         this.delegate = delegate;
     }
 
@@ -36,7 +36,7 @@ public class fetchData extends AsyncTask<Void,Void,ArrayList<String>> {
     protected ArrayList<String> doInBackground(Void... voids) {
 
         try {
-            URL url = new URL("https://bvet7wmxma.execute-api.us-east-1.amazonaws.com/prod/colleges?app_token=6vDahPFC9waiEwI3UMHbz5paBkTPRFZshJeDL7ZYnFXvbcoYRGtFPD6Ogh8iy6nI");
+            URL url = new URL("https://bvet7wmxma.execute-api.us-east-1.amazonaws.com/prod/faqs?app_token=6vDahPFC9waiEwI3UMHbz5paBkTPRFZshJeDL7ZYnFXvbcoYRGtFPD6Ogh8iy6nI");
 
             HttpURLConnection httpUrlConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpUrlConnection.getInputStream();
@@ -50,18 +50,19 @@ public class fetchData extends AsyncTask<Void,Void,ArrayList<String>> {
 
             //Figure out how to GET OBJECT TO SHOW
             JSONObject JO = new JSONObject(Data);
-            JSONArray JA = JO.getJSONArray("colleges");
+            JSONArray JA = JO.getJSONArray("faqs");
 
             for(int i = 0; i < JA.length(); i++)
             {
                 JSONObject JasonObject = JA.getJSONObject(i);
-                SingleParsed = "ID: " + JasonObject.get("id") +"\n"+
-                        "Name: " + JasonObject.get("name") +"\n"+
-                        "Email: " + JasonObject.get("email_tld") +"\n";
+                SingleParsed = "Question: " + JasonObject.get("question") +"\n"+
+                        "------" + "\n" +
+                        "Answer: " + JasonObject.get("answer") + "\n" +
+                        "***********************************" + "\n";
 
-                CollegeList.add(JasonObject.getString("name"));
                 DataParsed = DataParsed + SingleParsed;
             }
+            QueueList.add(DataParsed);
         } catch (MalformedURLException e){
             e.printStackTrace();
         } catch (IOException e) {
@@ -69,7 +70,7 @@ public class fetchData extends AsyncTask<Void,Void,ArrayList<String>> {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return CollegeList;
+        return QueueList;
     }
 
     @Override
